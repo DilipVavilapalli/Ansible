@@ -1,4 +1,7 @@
 ---
+  - name: Configure systems
+    hosts: all
+    become: yes
   - name: Playbook
     hosts: webservers
     become: yes
