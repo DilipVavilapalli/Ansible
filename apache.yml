@@ -12,3 +12,7 @@
         service:
           name: httpd
           state: started
+      - name: install git
+        yum: 
+          name: git
+          state: latest
