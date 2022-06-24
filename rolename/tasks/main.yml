@@ -2,6 +2,8 @@
 
 - name: perform all tasks
   include: "test.yml"
+  when:
+    - install == 'yes'
     
 - name: default set
   set_fact:
@@ -13,4 +15,4 @@
 - name: create dir
   shell: mkdir /home/newdir
   when: 
-  - prior_install == 'done'
+    - prior_install == 'done'
