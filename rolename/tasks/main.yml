@@ -3,6 +3,7 @@
 - name: perform all tasks
   include: "test.yml"
   
-- name: debug task
-  include: "debug.yml"
-  #include: "../handlers/main.yml"
+- name: test debug and set facts
+  set_fact: 
+    prior_install: done
+  when: dir_ex.stdout_lines | length >0
