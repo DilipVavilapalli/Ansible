@@ -1,7 +1,11 @@
 ---
 
 - name: perform all tasks
-  include_tasks: "test.yml"
+  block:
+    - name: including tasks
+      include_tasks: "test.yml"
+    - name: incluning task 2
+      include_tasks: "debug.yml"
   when:
     - install == 'yes'
     
