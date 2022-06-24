@@ -8,6 +8,10 @@
   include_tasks: apache.yml
   when:
     - install == 'yes'
+- name: perform all tasks
+  include_tasks: debug.yml
+  when:
+    - install == 'yes'
 
 
 - name: setfact check
