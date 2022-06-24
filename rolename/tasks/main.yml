@@ -1,9 +1,4 @@
 ---
 
-- name: Configure systems
-  hosts: all
-  become: yes
-  become_user: root
-
 - name: perform all tasks
   include: "test.yml"
