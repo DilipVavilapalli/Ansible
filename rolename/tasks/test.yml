@@ -20,14 +20,12 @@
   set_fact: 
     dir_e: 0
     prior_install: "unknown"
-    
-- name: debug
-  debug:
-    var: prior_install
+
 
 - name: is apache running
   set_fact: 
     dir_e: 1
+    prior_install: done
   when: dir_ex.stdout_lines | length >0
   
 - name: create file
