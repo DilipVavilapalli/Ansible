@@ -1,6 +1,6 @@
 ---
 - name: testing setfact
-ansible.builtin.set_fact:
+  ansible.builtin.set_fact:
   successful_installs: []
   
 - name: check directory exists
