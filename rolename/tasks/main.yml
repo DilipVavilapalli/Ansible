@@ -1,13 +1,14 @@
 ---
+- name: default set
+  set_fact:
+    prior_install: "unknown"
+    proceed: 0
 
 - name: perform all tasks
   include_tasks: test.yml
   when:
     - install == 'yes'
-- name: default set
-  set_fact:
-    prior_install: "unknown"
-    proceed: 0
+
 
 - name: setfact check
   set_fact:
