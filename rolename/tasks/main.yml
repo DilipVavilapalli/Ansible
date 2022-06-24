@@ -11,8 +11,8 @@
 - name: perform all tasks
   include_tasks: debug.yml
   when:
-    - ansible_facts.distribution in ['RedHat', 'Ubuntu']
-    - install == 'yes'
+    - ansible_facts.distribution in ['Ubuntu']
+   # - install == 'yes'
 
 
 - name: setfact check
