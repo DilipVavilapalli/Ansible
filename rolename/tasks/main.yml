@@ -1,7 +1,8 @@
 ---
 
 - name: perform all tasks
-  include: 
-    - test.yml
-    - debug.yml
+  include: "test.yml"
+  
+- name: debug task
+  include: "debug.yml"
   #include: "../handlers/main.yml"
