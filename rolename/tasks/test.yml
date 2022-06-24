@@ -3,8 +3,11 @@
 - name: local directory in ect system
   ansible.builtin.file:
     path: "{{ path }}"
-    group: saikiran
-    owner: saikiran
+    group: root
+    owner: root
+  ansible.builtin.debug:
+   msg:
+   - "permissions changed '{{root}}' goood"
   become: true
   become_user: root
 
