@@ -1,5 +1,8 @@
 ---
-
+- name: empyt 
+  ansible.builtin.set_fact:
+    successful_installs: []
+    
 - name: local directory in ect system
   ansible.builtin.file:
     path: "{{ path }}"
