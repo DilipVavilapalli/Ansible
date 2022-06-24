@@ -20,7 +20,8 @@
 - name: create a file
   shell: touch /home/tom
   when: service_file.stat.exists
-
+  notify:
+   - Restart apache
 - name: copy file
   ansible.builtin.copy:
     src: "{{ source }}"
