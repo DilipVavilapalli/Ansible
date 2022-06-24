@@ -3,8 +3,8 @@
 - name: perform all tasks
   include_tasks:
   loop:
-    - include_tasks: test.yml
-    - include_tasks: debug.yml
+    - test.yml
+    - debug.yml
   when:
     - install == 'yes'
     
