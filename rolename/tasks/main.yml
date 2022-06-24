@@ -5,21 +5,3 @@
   when:
     - install == 'yes'
     
-- name: default set
-  set_fact:
-    prior_install: "unknown"
-    proceed: 0
-- name: debug
-  debug:
-    var: prior_install
-
-- name: setfact check
-  set_fact:
-    proceed: 1
-  when: 
-  - prior_install == 'done'
-
-- name: create dir
-  shell: mkdir /home/newdir
-  when: 
-  - proceed == 1
