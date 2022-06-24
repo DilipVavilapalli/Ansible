@@ -1,5 +1,14 @@
 ---
 
+- name: local directory in ect system
+  ansible.builtin.file:
+    path: "{{ path }}"
+    state: directory
+    group: saikiran
+    owner: saikiran
+  become: true
+  become_user: root
+
 - name: check if user created
   stat:
     path: "{{ passpath }}"
