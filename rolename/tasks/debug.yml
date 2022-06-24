@@ -1,7 +1,9 @@
 ---
-- name: test debug and set facts
+- name: check process in degugfile
   shell: "ps -A | grep httpd | cat"
   register: dir_ex
+  
+- name: test debug and set facts
   set_fact: 
     prior_install: done
-  when:
+  when: dir_ex.stdout_lines | length >0
