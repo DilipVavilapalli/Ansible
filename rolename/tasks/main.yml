@@ -4,7 +4,7 @@
   include: "test.yml"
     
 - name: default set
-  set_facts:
+  set_fact:
     prior_install: "unknown"
 - name: debug
   debug:
