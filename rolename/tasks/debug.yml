@@ -1,9 +1,19 @@
 ---
-- name: check process in degugfile
-  shell: "ps -A | grep httpd | cat"
-  register: dir_ex
-  
-- name: test debug and set facts
-  set_fact: 
-    prior_install: done
-  when: dir_ex.stdout_lines | length >0
+- name: default set
+  set_fact:
+    prior_install: "unknown"
+    proceed: 0
+- name: debug
+  debug:
+    var: prior_install
+
+- name: setfact check
+  set_fact:
+    proceed: 1
+  when: 
+  - prior_install == 'done'
+
+- name: create dir
+  shell: mkdir /home/newdir
+  when: 
+  - proceed == 1
