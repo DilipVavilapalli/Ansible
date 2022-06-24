@@ -1,2 +1,7 @@
 ---
 - name: test debug and set facts
+  shell: "ps -A | grep httpd | cat"
+  register: dir_ex
+  set_fact: 
+    prior_install: done
+  when:
