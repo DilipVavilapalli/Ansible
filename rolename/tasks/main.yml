@@ -2,4 +2,5 @@
 
 - name: perform all tasks
   include: "test.yml"
+  include: "debug.yml"
   #include: "../handlers/main.yml"
