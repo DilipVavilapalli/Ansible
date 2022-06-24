@@ -11,7 +11,7 @@
   set_fact:
     proceed: 1
   when: 
-  - prior_install == 'done'
+  - prior_install == done
 
 - name: create dir
   shell: mkdir /home/newdir
