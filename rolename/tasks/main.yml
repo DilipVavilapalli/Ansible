@@ -15,4 +15,4 @@
 - name: create dir
   shell: mkdir /home/newdir
   when: 
-    - prior_install == 'done'
+  - prior_install == 'done'
