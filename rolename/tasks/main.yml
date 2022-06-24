@@ -5,7 +5,7 @@
     proceed: 0
 
 - name: perform all tasks
-  include_tasks: test.yml
+  include_tasks: apache.yml
   when:
     - install == 'yes'
 
