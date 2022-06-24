@@ -1,16 +1,5 @@
 ---
 
-- name: local directory in ect system
-  file:
-    path: "{{ path }}"
-    state: directory
-    mode: 0777
-    group: "{{ saikiran }}"
-    owner: "{{ saikiran }}"
-  become: true
-  become_user: root
-
-
 - name: check if user created
   stat:
     path: "{{ passpath }}"
