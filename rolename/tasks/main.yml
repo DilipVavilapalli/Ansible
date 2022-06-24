@@ -22,6 +22,7 @@
 - name: debug
   debug:
     var: prior_install
+    var: role_path
 - name: create dir
   shell: mkdir /home/newdir
   when: 
