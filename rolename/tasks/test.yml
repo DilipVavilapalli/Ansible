@@ -29,6 +29,11 @@
   shell: touch /home/potu2
   when:
   - dir_e == 1
+  
+- name: test templates
+  ansible.builtin.template:
+    src: "copy.j2"
+    dest: /home/potu
  
 - name: check if user created
   stat:
