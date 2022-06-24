@@ -19,6 +19,11 @@
 - name: set defaults
   set_fact: 
     dir_e: 0
+    prior_install: "unknown"
+    
+- name: debug
+  debug:
+    var: prior_install
 
 - name: is apache running
   set_fact: 
