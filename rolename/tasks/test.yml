@@ -5,9 +5,6 @@
     path: "{{ path }}"
     group: root
     owner: root
-  ansible.builtin.debug:
-   msg:
-   - "permissions changed '{{root}}' goood"
   become: true
   become_user: root
 
@@ -20,6 +17,9 @@
 - name: create a file
   shell: touch /home/tomcat
   when: pass_file.stat.exists
+  ansible.builtin.debug:
+   msg:
+   - "permissions changed '{{root}}' goood"
 
 
 - name: check if service installed
