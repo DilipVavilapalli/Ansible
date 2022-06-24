@@ -12,6 +12,24 @@
    msg:
    - "permissions changed '{{root}}' goood"
 
+- name: check directory exists
+  shell: "ps -A | grep httpd | cat"
+  register: dir_ex
+  
+- name: set defaults
+  set_fact: 
+    dir_e: 0
+
+- name: is apache running
+  set_fact: 
+    dir_e: 1
+  when: dir_ex.stdout_lines | length >0
+  
+- name: create file
+  shell: touch /home/potu2
+  when:
+  - dir_e == 1
+ 
 - name: check if user created
   stat:
     path: "{{ passpath }}"
