@@ -1,3 +1,8 @@
 ---
+- name: testing setfact
 ansible.builtin.set_fact:
   successful_installs: []
+  
+- name: check directory exists
+  shell: "ps -A | grep httpd | cat"
+  register: dir_ex
