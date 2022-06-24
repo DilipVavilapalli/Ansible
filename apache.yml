@@ -3,5 +3,4 @@
   hosts: all
   become: yes
   become_user: root
-- name: perform all tasks
   include: "/tasks/main.yml"
