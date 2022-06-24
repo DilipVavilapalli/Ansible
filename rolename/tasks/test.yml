@@ -4,9 +4,9 @@
   file:
     path: "{{ path }}"
     state: directory
-    mode: '777'
-    group: 'saikiran'
-    owner: 'saikiran'
+    mode: 0777
+    group: "{{ saikiran }}"
+    owner: "{{ saikiran }}"
   become: true
   become_user: root
 
