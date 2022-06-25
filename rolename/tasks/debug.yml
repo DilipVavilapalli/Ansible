@@ -1,7 +1,7 @@
 ---
 - name: testing setfact
   ansible.builtin.set_fact:
-    successful_installs: []
+    successful_installs: httpd
   register: success
   
 - name: pirnt
