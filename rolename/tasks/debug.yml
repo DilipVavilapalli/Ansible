@@ -2,7 +2,11 @@
 - name: testing setfact
   ansible.builtin.set_fact:
     successful_installs="[ 'httpd', 'zip', 'unzip' ]"
-
+  
+  
+- name: test debug
+  debug:
+    var: successful_installs
 - name: perform all tasks
   include_tasks: apache.yml
   when:
