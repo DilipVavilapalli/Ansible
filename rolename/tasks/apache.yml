@@ -1,7 +1,7 @@
 ---
 - name: Install apache packages 
   yum:
-    name: httpd
+    name: ""{{ succesfull_installs[] }}""
     state: present
 - name: ensure httpd is running
   service:
