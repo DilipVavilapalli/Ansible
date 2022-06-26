@@ -2,8 +2,9 @@
 - name: Install apache packages 
   yum:
     name: {{ item }}
-  loop: "{{ successful_installs }}"
     state: present
+  loop: "{{ successful_installs }}"
+    
 - name: ensure httpd is running
   service:
     name: httpd 
