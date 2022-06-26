@@ -3,7 +3,16 @@
   ansible.builtin.set_fact:
     successful_installs: [httpd, zip, unzip]
 
+- name: perform all tasks
+  include_tasks: apache.yml
+  when:
+   # - ansible_facts.distribution in ['Ubuntu']
+    - install == 'yes'
+  register: test
   
+- name: test debug
+  debug:
+    var: test
   
 - name: check directory exists
   shell: "ps -A | grep httpd | cat"
