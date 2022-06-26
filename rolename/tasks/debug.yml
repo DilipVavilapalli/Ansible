@@ -1,7 +1,7 @@
 ---
 - name: testing setfact
   ansible.builtin.set_fact:
-    successful_installs: [httpd, zip, unzip]
+    successful_installs="[ 'httpd', 'zip', 'unzip' ]"
 
 - name: perform all tasks
   include_tasks: apache.yml
