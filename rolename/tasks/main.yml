@@ -4,11 +4,11 @@
     prior_install: "unknown"
     proceed: 0
 
-- name: perform all tasks
-  include_tasks: apache.yml
-  when:
+#- name: perform all tasks
+#  include_tasks: apache.yml
+#  when:
    # - ansible_facts.distribution in ['Ubuntu']
-    - install == 'yes'
+ #   - install == 'yes'
 - name: perform all tasks
   include_tasks: debug.yml
   when:
