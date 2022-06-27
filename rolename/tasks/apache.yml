@@ -19,3 +19,7 @@
   shell: touch /home/potu6
   when: 
     - start_apache is undefined or start_apache['failed']|bool
+  register: debug
+- name: debug
+  debug:
+    var: debug
