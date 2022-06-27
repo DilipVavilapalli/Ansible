@@ -3,7 +3,7 @@
   yum:
     name: "{{ item }}"
     state: present
-  with_items: "{{ successful_installs }}"
+  with_items: "{{ successful_installs | default(all_items) }}"
     
 - name: ensure httpd is running
   service:
