@@ -8,3 +8,8 @@ dest: "/home/"
 saikiran: "saikiran"
 root: "saitoroot"
 install: "yes"
+all_items:
+  - first
+  - second
+  - third
+  - fourth
