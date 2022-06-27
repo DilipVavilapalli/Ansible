@@ -10,7 +10,7 @@
 - name: test debug
   debug:
     var: item
-  with_items: "{{ all_items | default(successful_installs) }}"
+  with_items: "{{ successful_installs | default('httpd') }}"
 - name: perform all tasks
   include_tasks: apache.yml
   when:
