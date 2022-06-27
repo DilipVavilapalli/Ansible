@@ -1,10 +1,10 @@
 ---
 - name: testing setfact
   ansible.builtin.set_fact:
-    successful_installs:
-      - httpd
-      - zip
-      - unzip
+   # successful_installs:
+    #  - httpd
+    #  - zip
+    #  - unzip
   
   
 - name: test debug
