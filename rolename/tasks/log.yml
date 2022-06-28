@@ -1,0 +1,20 @@
+---
+- name: hostname var
+  set_fact:
+    hnv: ""{{ ansible_facts['hostname'] }}""
+    
+- name: make log
+  set_fact:
+    log_content:
+      message: success
+      hostname: '{{ hnv }}'
+      details:
+        ipv4: "{{ ansible_facts['all_ipv4_addresses'] }}"
+        os: "{{ ansible_facts['os_family'] }}"
+        
+- name: save log
+  copy: 
+    content: "{{ log_content | to_nice_json(indent=4) }}"
+    dest: "{{ role_path }}/tasks/log-{{ hnv }}.json"
+  become: false
+  delegate_to: localhost
