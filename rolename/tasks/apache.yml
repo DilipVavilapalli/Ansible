@@ -18,7 +18,7 @@
 - name: createa file
   shell: touch /home/potu6
   when: 
-    - start_apache is undefined or start_apache['failed']
+    - start_apache is defined and not start_apache['failed']
   register: debug
 - name: debug
   debug:
