@@ -26,5 +26,5 @@
     
 - name: check var array
   ansible.builtin.copy:
-    src: path[0]
-    dest: path[1]
+    src: "{{ path[0] }}"
+    dest: "{{ path[1] }}"
