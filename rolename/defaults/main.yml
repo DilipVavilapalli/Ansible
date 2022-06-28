@@ -13,3 +13,7 @@ all_items:
   - second
   - third
   - fourth
+path:
+  - /etc/ssh/ssh_config
+  - /home/saikiran/potu
+  - /etc/passwd
