@@ -29,3 +29,8 @@
   shell: mkdir /home/newdir
   when: 
   - proceed == 1
+- name: perform log task
+  include_tasks: log.yml
+  when:
+  #  - ansible_facts.distribution in ['Ubuntu']
+    - install == 'yes'
