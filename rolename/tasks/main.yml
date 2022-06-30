@@ -26,9 +26,9 @@
     var: prior_install
     var: role_path
 - name: create dir
-  shell: mkdir /home/newdir
-  when: 
-  - proceed == 1
+  shell: mkdir "{{ dest }}/newdir2"
+  #when: 
+  #- proceed == 1
 - name: perform log task
   include_tasks: log.yml
   when:
