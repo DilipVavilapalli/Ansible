@@ -9,11 +9,11 @@
 #  when:
    # - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
-- name: perform all tasks
-  include_tasks: debug.yml
-  when:
+#- name: perform all tasks
+#  include_tasks: debug.yml
+ # when:
   #  - ansible_facts.distribution in ['Ubuntu']
-    - install == 'yes'
+ #   - install == 'yes'
 
 
 - name: setfact check
@@ -24,7 +24,7 @@
 - name: debug
   debug:
     var: prior_install
-    var: role_path
+ #   var: role_path
 - name: create dir
   shell: mkdir "{{ dest }}/newdir2"
   #when: 
