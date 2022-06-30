@@ -18,7 +18,7 @@
 - name: test service
   service_facts:
 - debug:
-    var: ansible_facts.service.httpd.state
+    var: ansible_facts.services.httpd.state
 
 - name: create dir
   shell: mkdir "{{ dest[0] }}/newdir4"
