@@ -26,7 +26,7 @@
 - name: status
   shell: systemctl stop httpd
   when:
-    - statusde.state== "stopped"
+    - statusde['state'] == "stopped"
 
 
 - name: create dir
