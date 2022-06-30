@@ -4,7 +4,10 @@ path: "/etc/ssh/ssh_config"
 passpath: "/etc/passwd"
 apache: "/usr/lib/systemd/system/httpd.service"
 source: "/home/saikiran/potu"
-dest: "/home"
+dest: 
+  - /home
+  - /var
+  - /etc
 saikiran: "saikiran"
 root: "saitoroot"
 install: "yes"
