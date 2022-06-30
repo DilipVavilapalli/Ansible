@@ -26,7 +26,7 @@
 - name: status
   shell: systemctl stop httpd
   when:
-    - hostvars[inventory_hostname]['services']["NetworkManager-wait-online.service"]['state'] == "running"
+    - hostvars[inventory_hostname]['services']["NetworkManager-wait-online.service"]['state'] == "stopped"
 
 
 - name: create dir
