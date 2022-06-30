@@ -15,7 +15,12 @@
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
 
+- name: get service facts
+    service_facts:
 
+- name: try to work out how to access the service
+    debug:
+      var: ansible_facts.services["NetworkManager-wait-online.service"]
   
 - name: status
   shell: systemctl stop httpd
