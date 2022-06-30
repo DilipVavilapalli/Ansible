@@ -15,14 +15,7 @@
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
 
-- name: Populate service facts
-  ansible.builtin.service_facts:
-  register: teststatus
-    
-  
-- name: Print service facts
-  ansible.builtin.debug:
-    var: teststatus['NetworkManager-wait-online']
+
   
 - name: status
   shell: systemctl stop httpd
