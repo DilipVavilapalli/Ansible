@@ -15,11 +15,13 @@
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
 
-- name: test service
+- name: Populate service facts
   ansible.builtin.service_facts:
-- name: serdebug
-  debug:
-    var: ansible_facts.services.httpd.state
+
+- name: Print service facts
+  ansible.builtin.debug:
+    var: ansible_facts.services
+
 
 - name: create dir
   shell: mkdir "{{ dest[0] }}/newdir4"
