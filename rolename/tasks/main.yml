@@ -20,7 +20,7 @@
   
 - name: Print service facts
   ansible.builtin.debug:
-    var: ansible_facts.services.NetworkManager-wait-online.service
+    var: ansible_facts.services['NetworkManager-wait-online']
   register: status
   
 - name: status
