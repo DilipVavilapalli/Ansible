@@ -18,7 +18,7 @@
 - name: test service
   ansible.builtin.service_facts:
 - name: serdebug
-- debug:
+  debug:
     var: ansible_facts.services.httpd.state
 
 - name: create dir
