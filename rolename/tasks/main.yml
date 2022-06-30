@@ -16,7 +16,7 @@
  #   - install == 'yes'
 
 - name: create dir
-  shell: mkdir "{{ dest[0] }}/newdir3"
+  shell: mkdir "{{ dest[0] }}/newdir4"
   register: dir
 #- name: setfact check
  # set_fact:
