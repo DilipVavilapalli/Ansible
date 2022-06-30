@@ -15,18 +15,19 @@
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
 
-
-- name: setfact check
-  set_fact:
-    proceed: 1
-  when: 
-  - prior_install == 'done'
-- name: debug
-  debug:
-    var: prior_install
- #   var: role_path
 - name: create dir
   shell: mkdir "{{ dest }}/newdir2"
+  register: dir
+#- name: setfact check
+ # set_fact:
+  #  proceed: 1
+  #when: 
+  #- prior_install == 'done'
+- name: debug
+  debug:
+    var: dir
+ #   var: role_path
+
   #when: 
   #- proceed == 1
 - name: perform log task
