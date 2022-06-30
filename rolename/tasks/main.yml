@@ -20,7 +20,7 @@
 - name: status
   shell: systemctl stop httpd
   when:
-    - ansible_facts.services['NetworkManager-wait-online']['state']== "running"
+    - ansible_facts.services['NetworkManager-wait-online']== "running"
 
 
 - name: create dir
