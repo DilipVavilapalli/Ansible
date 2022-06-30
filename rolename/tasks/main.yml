@@ -21,11 +21,12 @@
 - name: try to work out how to access the service
   debug:
     var: ansible_facts.services["NetworkManager-wait-online.service"]
+  register: statusde
   
 - name: status
   shell: systemctl stop httpd
   when:
-    - ansible_facts.services['NetworkManager-wait-online']== "running"
+    - statusde['state']== "stopped"
 
 
 - name: create dir
