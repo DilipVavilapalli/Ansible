@@ -16,7 +16,8 @@
  #   - install == 'yes'
 
 - name: test service
-  service_facts:
+  ansible.builtin.service_facts:
+- name: serdebug
 - debug:
     var: ansible_facts.services.httpd.state
 
