@@ -27,6 +27,10 @@
   debug:
     var: dir
  #   var: role_path
+ 
+- name: chdir
+  command: chdir=/home/saikiran
+    mkdir chdir
 
   #when: 
   #- proceed == 1
