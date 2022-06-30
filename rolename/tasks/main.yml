@@ -16,7 +16,7 @@
  #   - install == 'yes'
 
 - name: get service facts
-    service_facts:
+  ansible.builtin.service_facts:
 
 - name: try to work out how to access the service
     debug:
