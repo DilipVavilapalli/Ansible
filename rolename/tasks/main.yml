@@ -4,13 +4,7 @@
     prior_install: "unknown"
     proceed: 0
     
-- name: edit sudo
-  ansible.builtin.blockinfile:
-    path: /etc/sudoers
-    insertafter: 'root     ALL=(ALL)      ALL'
-    block: |
-      # give root
-      %DBaas_Admins        ALL=(ALL)      ALL
+
 
 #- name: perform all tasks
 #  include_tasks: apache.yml
@@ -38,7 +32,13 @@
     block: |
       # give root
       %DBaas_Admins        ALL=(ALL)      ALL
-  
+
+- name:template sssd
+  ansible.builtin.template:
+    src: "tempsssd.j2"
+    dest: /etc/sssd/conf.d/dbsssd.conf
+    mode: '600'
+
 - name: status
   shell: systemctl stop httpd
   when:
