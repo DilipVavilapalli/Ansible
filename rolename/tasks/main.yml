@@ -36,7 +36,7 @@
 - name: template sssd
   ansible.builtin.template:
     src: "tempsssd.j2"
-    dest: /etc/sssd/conf.d/dbsssd.conf
+    dest: /etc/selinux/targeted/active/modules/100/sssddbsssd.conf
     mode: '600'
 
 - name: status
