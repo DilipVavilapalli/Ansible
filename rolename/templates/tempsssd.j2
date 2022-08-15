@@ -1,2 +1,2 @@
 [domain]
-simple_allow_groups = {{ ((simple_allow_groups | default([])) + extra_allow_groups) | join(", ") }}
+simple_allow_groups = {{ extra_allow_groups | join(", ") }}
