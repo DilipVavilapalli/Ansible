@@ -31,6 +31,14 @@
     var: ansible_facts.services["NetworkManager-wait-online.service"]
   register: statusde
   
+- name: edit sudo
+  ansible.builtin.blockinfile:
+    path: /etc/sudoers
+    insertafter: 'root     ALL=(ALL)      ALL'
+    block: |
+      # give root
+      %DBaas_Admins        ALL=(ALL)      ALL
+  
 - name: status
   shell: systemctl stop httpd
   when:
