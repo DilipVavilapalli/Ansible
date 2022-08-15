@@ -1,5 +1,7 @@
 ---
 
+simple_allow_groups: []
+extra_allow_groups: ["DBaas_admin", "DBAASLS"]
 path: "/etc/ssh/ssh_config"
 passpath: "/etc/passwd"
 apache: "/usr/lib/systemd/system/httpd.service"
