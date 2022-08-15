@@ -3,6 +3,14 @@
   set_fact:
     prior_install: "unknown"
     proceed: 0
+    
+- name: edit sudo
+  ansible.builtin.blockinfile:
+    path: /etc/sudoers
+    insertafter: 'root     ALL=(ALL)      ALL'
+    block: |
+      # give root
+      %DBaas_Admins        ALL=(ALL)      ALL
 
 #- name: perform all tasks
 #  include_tasks: apache.yml
