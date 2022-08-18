@@ -1,6 +1,6 @@
 ---
 - name: Configure systems
-  hosts: /inventory/hosts
+  hosts: [myhosts]
   become: yes
   become_user: root
   roles:
