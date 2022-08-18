@@ -18,7 +18,7 @@
  #   - install == 'yes'
 - name: print ip
   ansible.builtin.service_facts:
-    - slave_ip: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
+    slave_ip: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
   when: server_id != "2000"
   
 - name: ipprint
