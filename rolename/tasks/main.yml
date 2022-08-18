@@ -33,10 +33,12 @@
 - name: touch file1
   shell: touch ~/potu2
   delegate_to: "{{ ip_1 }}"
+  when: ip1 is defined
  
 - name: touch file3
   shell: touch /home/filepotuu1
   delegate_to: "{{ ip_2 }}"
+  when: ip2 is defined
   
 - name: try to work out how to access the service
   debug:
