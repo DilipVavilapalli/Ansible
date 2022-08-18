@@ -20,6 +20,24 @@
 - name: get service facts
   ansible.builtin.service_facts:
 
+- name: setfact1
+  ansible.builtin.set_fact:
+    ip_1: "{{ ansible_host }}"
+  when: server_id == "2000"
+
+- name: setfact2
+  ansible.builtin.set_fact:
+    ip_2: "{{ ansible_host }}"
+  when: server_id != "2000" 
+  
+-name: touch file1
+ shell: touch ~/potu1
+ delegate_to: "{{ ip_1 }}"
+ 
+- name: touch file3
+  shell: touch /home/filepotuu1
+  delegate_to: "{{ ip_2 }}"
+  
 - name: try to work out how to access the service
   debug:
     var: ansible_facts.services["NetworkManager-wait-online.service"]
