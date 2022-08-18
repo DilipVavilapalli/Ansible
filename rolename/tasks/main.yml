@@ -16,7 +16,15 @@
  # when:
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
-
+- name: print ip
+  ansible.builtin.service_facts:
+    - slave_ip: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
+  when: server_id != "2000"
+  
+- name: ipprint
+  debug:
+    var: slave_ip
+  
 - name: get service facts
   ansible.builtin.service_facts:
 
