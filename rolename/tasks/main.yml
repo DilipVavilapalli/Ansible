@@ -17,7 +17,7 @@
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
 - name: print ip
-  ansible.builtin.set_facts:
+  ansible.builtin.set_fact:
     ip_3: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
   when: server_id != "2000"
   
