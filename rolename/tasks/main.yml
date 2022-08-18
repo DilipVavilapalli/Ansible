@@ -23,7 +23,7 @@
   
 - name: ipprint
   debug:
-    var: slave_ip
+    var: ip_3
   
 - name: get service facts
   ansible.builtin.service_facts:
