@@ -1,6 +1,6 @@
 ---
 - name: Configure systems
-  hosts: all
+  hosts: [myhost]
   become: yes
   become_user: root
   roles:
