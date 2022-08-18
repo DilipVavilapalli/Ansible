@@ -1,2 +1,2 @@
-[myhost]
+[myhosts]
 {{ myipone }}
