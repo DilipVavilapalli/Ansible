@@ -16,6 +16,21 @@
  # when:
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
+- name: list hostname
+  set_fact:
+    hostips: "{{ groups['potu'] }}"
+
+
+- name: msster_ip
+  set_fact:
+    slave_ip: "{{ item }}" | lits
+  when: "'{{ item }}' != '{{ master_ip }}'"
+  with_items: "{{ hostips }}"
+ 
+- name: print slave
+  debug:
+    var: slave_ip
+    
 - name: print ip
   set_fact:
     ip_3: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
