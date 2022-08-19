@@ -25,7 +25,7 @@
 - name: gtsluton
   set_fact:
     ip_hostname_gl: "{{ hostvars[item]['ip_hostname'] }}"
-  with_items: "{{ groups['manager'] }}"
+  with_items: "{{ groups['potu'] }}"
     
 - name: vars lookup
   ansible.builtin.set_fact:
