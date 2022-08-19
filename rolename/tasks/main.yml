@@ -17,11 +17,16 @@
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
 - name: print ip
-  vars:
+  set_fact:
     ip_3: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
-    ip_hostnam: "{{ ansible_fqdn.split('.')[0] }}"
+    ip_hostname: "{{ ansible_fqdn.split('.')[0] }}"
   when: "'{{ ansible_fqdn.split('.')[0] }}' != '{{ master_active }}'"
 
+- name: gtsluton
+  set_fact:
+    ip_hostname_gl: "{{ hostvars[item]['ip_hostname'] }}"
+  with_items: "{{ groups['manager'] }}"
+    
 - name: vars lookup
   ansible.builtin.set_fact:
     host_name: "{{ item }}"
@@ -35,8 +40,8 @@
   debug:
     var: ip_hostnam
   
-- name: create "{{ ip_hostnam }}" dir in all
-  shell:  mkdir "/home/{{ ip_hostnam }}"  
+- name: create "{{ ip_hostname_gl }}" dir in all
+  shell:  mkdir "/home/{{ ip_hostname_gl }}"  
 
 - name: ip_3dir
   shell: mkdir /home/delegate
