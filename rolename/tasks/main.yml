@@ -20,6 +20,7 @@
   ansible.builtin.set_fact:
     ip_3: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
     ip_hostname: "{{ ansible_fqdn.split('.')[0] }}"
+    cacheable: yes
   when: "'{{ ansible_fqdn.split('.')[0] }}' != '{{ master_active }}'"
   
 - name: ipprint
@@ -29,6 +30,9 @@
   debug:
     var: ip_hostname 
   
+- name: create "{{ ip_hostname }}" dir in all
+  shell:  mkdir "/home/{{ ip_hostname }}"  
+
 - name: ip_3dir
   shell: mkdir /home/delegate
   delegate_to: "{{ item }}"
