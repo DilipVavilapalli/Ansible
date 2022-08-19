@@ -22,6 +22,9 @@
     ip_hostname: "{{ ansible_fqdn.split('.')[0] }}"
   when: "'{{ ansible_fqdn.split('.')[0] }}' != '{{ master_active }}'"
 
+- name: list hostname
+  debug:
+    var: "{{ groups['potu'] }}"
 - name: gtsluton
   set_fact:
     ip_hostname_gl: "{{ hostvars[item]['ip_hostname'] }}"
