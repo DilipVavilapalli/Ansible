@@ -24,11 +24,12 @@
   when: "'{{ ansible_fqdn.split('.')[0] }}' != '{{ master_active }}'"
 
 - name: vars lookup
-  ansible.builtin.debug:
-    msg: "{{ lookup('ansible.builtin.vars', 'master_active')}}"
+  ansible.builtin.set_fact:
+    host_name: "{{ lookup('ansible.builtin.vars')}}"
+    
 - name: ipprint
   debug:
-    var: ip_3
+    var: host_name
 - name: pirinty
   debug:
     var: ip_hostname 
