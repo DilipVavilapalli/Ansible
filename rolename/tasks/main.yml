@@ -34,9 +34,8 @@
   delegate_to: "{{ item }}"
   with_items:
     - "{{ ip_3 }}"
-  when: ip_3 is defined
   
-- name: get service facts
+  - name: get service facts
   ansible.builtin.service_facts:
 
 - name: setfact1
