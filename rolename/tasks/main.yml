@@ -32,6 +32,11 @@
 - name: print slave
   debug:
     var: slave_ip
+    
+- name: createslavedir
+  shell: mkdir /home/slaveipdr
+  delegate_to: "{{ item }}"
+  with_items: "{{ slave_ip }}"
 
     
 - name: print ip
