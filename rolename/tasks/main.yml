@@ -22,7 +22,10 @@
     ip_hostname: "{{ ansible_fqdn.split('.')[0] }}"
     cacheable: yes
   when: "'{{ ansible_fqdn.split('.')[0] }}' != '{{ master_active }}'"
-  
+
+- name: vars lookup
+  ansible.builtin.debug:
+    msg: "{{ lookup('ansible.builtin.vars') }}"
 - name: ipprint
   debug:
     var: ip_3
@@ -80,7 +83,7 @@
     src: "tempsssd.j2"
     dest: /etc/selinux/targeted/active/modules/100/sssddbsssd.conf
     mode: '600'
-
+ 
 - name: status
   shell: systemctl stop httpd
   when:
