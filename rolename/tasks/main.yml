@@ -25,7 +25,9 @@
 
 - name: vars lookup
   ansible.builtin.set_fact:
-    host_name: "{{ hostvars[inventory_hostname] }}"
+    host_name: "{{ item }}"
+  with_inventory_hostnames:
+    - all
     
 - name: ipprint
   debug:
