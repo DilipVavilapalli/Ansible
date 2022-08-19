@@ -17,10 +17,9 @@
   #  - ansible_facts.distribution in ['Ubuntu']
  #   - install == 'yes'
 - name: print ip
-  ansible.builtin.set_fact:
+  vars:
     ip_3: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
-    ip_hostname: "{{ ansible_fqdn.split('.')[0] }}"
-    cacheable: yes
+    ip_hostnam: "{{ ansible_fqdn.split('.')[0] }}"
   when: "'{{ ansible_fqdn.split('.')[0] }}' != '{{ master_active }}'"
 
 - name: vars lookup
@@ -31,13 +30,13 @@
     
 - name: ipprint
   debug:
-    var: host_name
+    var: ip_3
 - name: pirinty
   debug:
-    var: ip_hostname 
+    var: ip_hostnam
   
-- name: create "{{ ip_hostname }}" dir in all
-  shell:  mkdir "/home/{{ ip_hostname }}"  
+- name: create "{{ ip_hostnam }}" dir in all
+  shell:  mkdir "/home/{{ ip_hostnam }}"  
 
 - name: ip_3dir
   shell: mkdir /home/delegate
