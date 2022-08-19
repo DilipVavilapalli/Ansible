@@ -18,8 +18,8 @@
  #   - install == 'yes'
 - name: list hostname
   set_fact:
-    hostips: "{{ groups['potu'] }}"
-  
+#    hostips: "{{ groups['potu'] }}"
+    hostips: "{{ ansible_play_hosts }}"
   
 
 
