@@ -39,7 +39,7 @@
   with_items:
     - "{{ ip_3 }}"
   
-  - name: get service facts
+- name: get service facts
   ansible.builtin.service_facts:
 
 - name: setfact1
