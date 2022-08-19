@@ -18,12 +18,16 @@
  #   - install == 'yes'
 - name: print ip
   ansible.builtin.set_fact:
-    ip_3: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
-  when: server_id == "2000"
+    - ip_3: "{{ hostvars[inventory_hostname]['ansible_all_ipv4_addresses'] }}"
+    - ip_hostname: "{{ ansible_fqdn.split('.')[0] }}"
+  when: "{ ansible_fqdn.split('.')[0] }}" != "{{ master_active }}"
   
 - name: ipprint
   debug:
     var: ip_3
+- name: pirinty
+  debug:
+    var: ip_hostname 
   
 - name: ip_3dir
   shell: mkdir /home/delegateed
