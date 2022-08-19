@@ -19,6 +19,7 @@
 - name: list hostname
   set_fact:
     hostips: "{{ groups['potu'] }}"
+  run_once: True
 
 
 - name: msster_ip
@@ -26,10 +27,12 @@
     slave_ip: "{{ item  | list }}"
   when: "'{{ item }}' != '{{ master_ip }}'"
   with_items: "{{ hostips }}"
+  run_once: True
  
 - name: print slave
   debug:
     var: slave_ip
+  run_once: True
     
 - name: print ip
   set_fact:
