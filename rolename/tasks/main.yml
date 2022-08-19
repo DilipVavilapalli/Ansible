@@ -37,6 +37,7 @@
   shell: mkdir /home/slaveipdr
   delegate_to: "{{ item }}"
   with_items: "{{ slave_ip }}"
+  run_once: True
 
     
 - name: print ip
