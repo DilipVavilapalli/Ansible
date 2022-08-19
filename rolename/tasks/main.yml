@@ -25,7 +25,7 @@
 
 - name: vars lookup
   ansible.builtin.debug:
-    msg: "{{ lookup('ansible.builtin.vars') }}"
+    msg: "{{ lookup('ansible.builtin.vars', 'variabl')}}"
 - name: ipprint
   debug:
     var: ip_3
