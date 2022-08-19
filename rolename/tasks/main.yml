@@ -34,7 +34,7 @@
     var: slave_ip
     
 - name: createslavedir
-  shell: mkdir /home/slaveipdr
+  shell: mkdir /home/slaveip
   delegate_to: "{{ item }}"
   with_items: "{{ slave_ip }}"
   run_once: True
