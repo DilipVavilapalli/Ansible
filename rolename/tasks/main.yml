@@ -24,7 +24,7 @@
 
 - name: list hostname
   debug:
-    var: "{{ groups['potu'] }}"
+    msg: "{{ groups['potu'] }}"
 - name: gtsluton
   set_fact:
     ip_hostname_gl: "{{ hostvars[item]['ip_hostname'] }}"
