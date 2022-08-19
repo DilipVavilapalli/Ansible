@@ -23,7 +23,7 @@
 
 - name: msster_ip
   set_fact:
-    slave_ip: "{{ item }}" | lits
+    slave_ip: "{{ item  | list }}"
   when: "'{{ item }}' != '{{ master_ip }}'"
   with_items: "{{ hostips }}"
  
