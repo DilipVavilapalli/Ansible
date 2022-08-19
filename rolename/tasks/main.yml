@@ -27,7 +27,9 @@
   
 - name: ip_3dir
   shell: mkdir /home/delegateed
-  delegate_to: "{{ ip_3 }}"
+  delegate_to: "{{ item }}"
+  with_items:
+    - "{{ ip_3 }}"
   when: ip_3 is defined
   
 - name: get service facts
